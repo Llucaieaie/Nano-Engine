@@ -37,6 +37,12 @@
     <Filter Include="Externals\MathGeoLib\Time">
       <UniqueIdentifier>{1d07a7ae-7541-4ebe-8134-5a5b5b6088ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\ImGui">
+      <UniqueIdentifier>{862a2e88-2811-48dd-bf1d-62d1de080dab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\ImGui\backends">
+      <UniqueIdentifier>{530b1645-975f-41ea-9b40-5e87ccf8a8f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -255,6 +261,24 @@
     <ClInclude Include="glmath.h">
       <Filter>Externals</Filter>
     </ClInclude>
+    <ClInclude Include="ImGui\imconfig.h">
+      <Filter>Sources\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui.h">
+      <Filter>Sources\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_internal.h">
+      <Filter>Sources\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_rectpack.h">
+      <Filter>Sources\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_textedit.h">
+      <Filter>Sources\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_truetype.h">
+      <Filter>Sources\ImGui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ModuleCamera3D.cpp">
@@ -388,6 +412,21 @@
     </ClCompile>
     <ClCompile Include="glmath.cpp">
       <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui.cpp">
+      <Filter>Sources\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_demo.cpp">
+      <Filter>Sources\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_draw.cpp">
+      <Filter>Sources\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_tables.cpp">
+      <Filter>Sources\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_widgets.cpp">
+      <Filter>Sources\ImGui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
