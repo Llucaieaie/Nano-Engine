@@ -78,6 +78,8 @@ void ModuleEditor::DrawEditor()
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
+
+
 bool ModuleEditor::CleanUp()
 {
     ImGui_ImplOpenGL3_Shutdown();

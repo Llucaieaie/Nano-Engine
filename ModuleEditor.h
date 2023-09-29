@@ -12,7 +12,6 @@ public:
 
 	bool Init();
 	void DrawEditor();
-	//update_status PreUpdate(float dt);
 	bool CleanUp();
 
 	void AddFPS(const float aFPS);

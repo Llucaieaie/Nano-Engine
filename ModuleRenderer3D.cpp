@@ -154,7 +154,8 @@ update_status ModuleRenderer3D::PreUpdate(float dt)
 update_status ModuleRenderer3D::PostUpdate(float dt)
 {
 	Grid.Render();
-	SDL_GL_SwapWindow(App->window->window);
+
+	App->editor->DrawEditor();
 	
 	//// Start the Dear ImGui frame
 	//ImGui_ImplOpenGL3_NewFrame();
