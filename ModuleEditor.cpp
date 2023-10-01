@@ -46,33 +46,80 @@ void ModuleEditor::DrawEditor()
     {
         if (ImGui::BeginMenu("File"))
         {
-            ImGui::Text("Hello world!");
+            //ShowExampleMenuFile();
+
+            ImGui::MenuItem("(demo menu)", NULL, false, false);
+            if (ImGui::MenuItem("New")) {}
+            if (ImGui::MenuItem("Open", "Ctrl+O")) {}
+            if (ImGui::BeginMenu("Open Recent"))
+            {
+                ImGui::MenuItem("fish_hat.c");
+                ImGui::MenuItem("fish_hat.inl");
+                ImGui::MenuItem("fish_hat.h");
+                if (ImGui::BeginMenu("More.."))
+                {
+                    ImGui::MenuItem("Hello");
+                    ImGui::MenuItem("Sailor");
+                    if (ImGui::BeginMenu("Recurse.."))
+                    {
+                        //ShowExampleMenuFile();
+                        ImGui::EndMenu();
+                    }
+                    ImGui::EndMenu();
+                }
+                ImGui::EndMenu();
+            }
+
+
+
             ImGui::EndMenu();
         }
-        if (ImGui::BeginMenu("Assets"))
+        if (ImGui::BeginMenu("Edit"))
         {
-            ImGui::Text("Hello world!");
-            ImGui::EndMenu();
-        }
-        if (ImGui::BeginMenu("Objects"))
-        {
-            ImGui::Text("Hello world!");
-            ImGui::EndMenu();
-        }
-        if (ImGui::BeginMenu("About"))
-        {
-            ImGui::Text("Hello world!");
+            if (ImGui::MenuItem("Undo", "CTRL+Z")) {}
+            if (ImGui::MenuItem("Redo", "CTRL+Y", false, false)) {}  // Disabled item
+            ImGui::Separator();
+            if (ImGui::MenuItem("Cut", "CTRL+X")) {}
+            if (ImGui::MenuItem("Copy", "CTRL+C")) {}
+            if (ImGui::MenuItem("Paste", "CTRL+V")) {}
             ImGui::EndMenu();
         }
         ImGui::EndMainMenuBar();
     }
-    if (ImGui::Begin("Configuration"))
-    {
-        //ImGui::PlotHistogram("FPS", mFPSLog.data(), mFPSLog.size());
-        ImGui::End();
-    }
 
-    ImGui::ShowDemoWindow();
+
+
+    //if (ImGui::BeginMainMenuBar())
+    //{
+    //    if (ImGui::BeginMenu("File"))
+    //    {
+    //        ImGui::Text("Hello world!");
+    //        ImGui::EndMenu();
+    //    }
+    //    if (ImGui::BeginMenu("Assets"))
+    //    {
+    //        ImGui::Text("Hello world!");
+    //        ImGui::EndMenu();
+    //    }
+    //    if (ImGui::BeginMenu("Objects"))
+    //    {
+    //        ImGui::Text("Hello world!");
+    //        ImGui::EndMenu();
+    //    }
+    //    if (ImGui::BeginMenu("About"))
+    //    {
+    //        ImGui::Text("Hello world!");
+    //        ImGui::EndMenu();
+    //    }
+    //    ImGui::EndMainMenuBar();
+    //}
+    //if (ImGui::Begin("Configuration"))
+    //{
+    //    //ImGui::PlotHistogram("FPS", mFPSLog.data(), mFPSLog.size());
+    //    ImGui::End();
+    //}
+
+    //ImGui::ShowDemoWindow();
 
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
