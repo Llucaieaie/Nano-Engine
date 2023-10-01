@@ -396,3 +396,16 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+*.db
+*.obj
+*.obj
+.vs/Nano Engine/v16/.suo
+*.ipch
+*.log
+*.exe
+*.recipe
+*.ilk
+*.pdb
+*.tlog
+*.lastbuildstate
+*.idb
