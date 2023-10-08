@@ -6,7 +6,6 @@
 #include "MathGeoLib/include/Math/float3x3.h"
 #include "MathGeoLib/include/Math/float4x4.h"
 #include "Primitive.h"
-#include "Glew/include/glew.h"
 
 //todo: REMOVE this before 1st delivery!!
 #include "glmath.h"
@@ -34,8 +33,4 @@ public:
 	
 	//You won't need this after using Frustum
 	mat4x4 ProjectionMatrix;
-
-	GLuint VBO = 0; //Vertex Buffer Object
-	GLuint EBO;
-	GLuint VAO;
 };

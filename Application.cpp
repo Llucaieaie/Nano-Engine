@@ -6,7 +6,6 @@ Application::Application()
 	input = new ModuleInput(this);
 	renderer3D = new ModuleRenderer3D(this);
 	camera = new ModuleCamera3D(this);
-	editor = new ModuleEditor(this);
 
 	// The order of calls is very important!
 	// Modules will Init() Start() and Update in this order
@@ -19,7 +18,6 @@ Application::Application()
 
 	// Renderer last!
 	AddModule(renderer3D);
-	AddModule(editor);
 }
 
 Application::~Application()
@@ -72,17 +70,17 @@ update_status Application::Update()
 	
 	for (std::vector<Module*>::const_iterator it = list_modules.cbegin(); it != list_modules.cend() && ret == UPDATE_CONTINUE; ++it)
 	{
-		ret = (*it)->PreUpdate(dt);
+		(*it)->PreUpdate(dt);
 	}
 
 	for (std::vector<Module*>::const_iterator it = list_modules.cbegin(); it != list_modules.cend() && ret == UPDATE_CONTINUE; ++it)
 	{
-		ret = (*it)->Update(dt);
+		(*it)->Update(dt);
 	}
 
 	for (std::vector<Module*>::const_iterator it = list_modules.cbegin(); it != list_modules.cend() && ret == UPDATE_CONTINUE; ++it)
 	{
-		ret = (*it)->PostUpdate(dt);
+		(*it)->PostUpdate(dt);
 	}
 
 	FinishUpdate();
