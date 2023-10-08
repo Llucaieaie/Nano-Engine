@@ -1,6 +1,7 @@
 #pragma once
 #include "Module.h"
 #include "Globals.h"
+#include <vector>
 
 
 class ModuleEditor : public Module
@@ -16,4 +17,5 @@ public:
 
 	void AddFPS(const float aFPS);
 
+	std::vector<float> mFPSLog;
 };
