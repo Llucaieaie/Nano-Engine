@@ -43,6 +43,9 @@
     <Filter Include="Externals\ImGui\backends">
       <UniqueIdentifier>{7e73eaac-3a16-4a05-8fdd-e2734a0eedea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Externals\Parson">
+      <UniqueIdentifier>{e72f7a5b-2987-4b97-94b6-c1d0773ebecd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -294,6 +297,9 @@
     <ClInclude Include="ModuleEditor.h">
       <Filter>Sources\Modules</Filter>
     </ClInclude>
+    <ClInclude Include="parson\parson.h">
+      <Filter>Externals\Parson</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ModuleCamera3D.cpp">
@@ -454,6 +460,9 @@
     </ClCompile>
     <ClCompile Include="ModuleEditor.cpp">
       <Filter>Sources\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="parson\parson.c">
+      <Filter>Externals\Parson</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

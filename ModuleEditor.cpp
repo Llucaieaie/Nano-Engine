@@ -61,7 +61,11 @@ void ModuleEditor::DrawEditor()
             ImGui::Text("Hello world!");
             ImGui::EndMenu();
         }
-        if (ImGui::BeginMenu("About"))
+        if (ImGui::BeginMenu("Help"))
+        {
+            ShowAboutInfo();
+        }
+        if (ImGui::BeginMenu("Configuration"))
         {
             ImGui::Text("Hello world!");
             ImGui::EndMenu();
@@ -69,11 +73,11 @@ void ModuleEditor::DrawEditor()
         ImGui::EndMainMenuBar();
     }
 
-    if (ImGui::Begin("Configuration"))
-    {
-        ImGui::PlotHistogram("FPS", mFPSLog.data(), mFPSLog.size());
-        ImGui::End();
-    }
+    //if (ImGui::Begin("Configuration"))
+    //{
+    //    ImGui::PlotHistogram("FPS", mFPSLog.data(), mFPSLog.size());
+    //    ImGui::End();
+    //}
 
     ImGui::ShowDemoWindow();
     
@@ -108,4 +112,51 @@ void ModuleEditor::AddFPS(const float aFPS)
         }
         mFPSLog[mFPSLog.capacity() - 1] = aFPS;
     }
+}
+
+
+void ModuleEditor::ShowAboutInfo()
+{
+    if (ImGui::BeginMenu("About")) {
+        ImGui::SeparatorText("NANO ENGINE");
+        ImGui::Text("3D Graphic Engine made by Lluc Estruch and Rafael Esquius");
+        ImGui::Text("Github: https://github.com/Llucaieaie/Nano-Engine");
+        ImGui::Text("\n");
+
+        ImGui::TextColored({ 1,1,0.5,1 }, "Used libraries:");
+        ImGui::BulletText("SDL          http://www.libsdl.org/              version: 2.0");
+        ImGui::BulletText("ImGui        https://github.com/ocornut/imgui	version: 1.89.9");
+        ImGui::BulletText("Glew         https://glew.sourceforge.net/       version: 2.1.0");
+        ImGui::BulletText("MathGeoLib   http://clb.demon.fi/MathGeoLib/");
+        ImGui::BulletText("Parson       https://github.com/kgabis/parson");
+        ImGui::Text("\n");
+
+        ImGui::TextColored({ 1,1,0.5,1 }, "License:");
+        ImGui::Text("\n");
+        ImGui::Text("Copyright 2023 Lluc Estruch");
+        ImGui::Text("\n");
+        ImGui::Text("Permission is hereby granted, free of charge, to any person");
+        ImGui::Text("obtaining a copy of this softwareand associated documentation");
+        ImGui::Text("files(the 'Software'), to deal in the Software without");
+        ImGui::Text("restriction, including without limitation the rights to use, ");
+        ImGui::Text("copy, modify, merge, publish, distribute, sublicense, ");
+        ImGui::Text("and /or sell copies of the Software, and to permit persons to ");
+        ImGui::Text("whom the Software is furnished to do so, subject to ");
+        ImGui::Text("the following conditions : ");
+        ImGui::Text("\n");
+        ImGui::Text("The above copyright noticeand this permission notice shall be ");
+        ImGui::Text("included in all copies or substantial portions of the Software.");
+        ImGui::Text("\n");
+        ImGui::Text("THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, ");
+        ImGui::Text("EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES ");
+        ImGui::Text("OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND");
+        ImGui::Text("NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS");
+        ImGui::Text("BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ");
+        ImGui::Text("ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN ");
+        ImGui::Text("CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE ");
+        ImGui::Text("SOFTWARE.");
+
+        ImGui::EndMenu();
+    }
+    ImGui::EndMenu();
 }

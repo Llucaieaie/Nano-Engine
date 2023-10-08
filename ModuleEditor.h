@@ -17,5 +17,7 @@ public:
 
 	void AddFPS(const float aFPS);
 
+	void ShowAboutInfo();
+
 	std::vector<float> mFPSLog;
 };
