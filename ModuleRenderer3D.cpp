@@ -180,12 +180,6 @@ update_status ModuleRenderer3D::PostUpdate(float dt)
 	glLineWidth(2.0f);
 	glBegin(GL_TRIANGLES);
 
-	glVertex3d(0, 0, 0); glVertex3d(1, 1, 0); glVertex3d(1, 0, 0);
-	glVertex3d(0, 0, 0); glVertex3d(0, 1, 0); glVertex3d(1, 1, 0);
-
-	glVertex3d(0, 0, 0); glVertex3d(0, 1, 1); glVertex3d(0, 1, 0);
-	glVertex3d(0, 0, 1); glVertex3d(0, 1, 1); glVertex3d(0, 0, 0);
-
 	glEnd();
 	glLineWidth(1.0f);
 

@@ -174,6 +174,13 @@ void ModuleEditor::ShowInputInfo()
     ImGuiIO& io = ImGui::GetIO();
     if (ImGui::Begin("Inputs", nullptr, ImGuiWindowFlags_NoCollapse))
     {
+        if (ImGui::BeginItemTooltip())
+        {
+            ImGui::PushTextWrapPos(ImGui::GetFontSize() * 35.0f);
+            ImGui::TextUnformatted("View inputs.\nConfig->Inputs to close window");
+            ImGui::PopTextWrapPos();
+            ImGui::EndTooltip();
+        }
         if (ImGui::IsMousePosValid())
             ImGui::Text("Mouse pos: (%g, %g)", io.MousePos.x, io.MousePos.y);
         else
