@@ -18,6 +18,11 @@ public:
 	void AddFPS(const float aFPS);
 
 	void ShowAboutInfo();
+	void ShowInputInfo();
+
+	bool isInputWindow;
 
 	std::vector<float> mFPSLog;
 };
+
+static void HelpMarker(const char* desc);
