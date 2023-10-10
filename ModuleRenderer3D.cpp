@@ -152,6 +152,11 @@ bool ModuleRenderer3D::Init()
 	return ret;
 }
 
+bool ModuleRenderer3D::Start() {
+
+	App->geometry->LoadFile("Assets/Models/BakerHouse.fbx");
+	return false;
+}
 // PreUpdate: clear buffer
 update_status ModuleRenderer3D::PreUpdate(float dt)
 {
@@ -176,19 +181,21 @@ update_status ModuleRenderer3D::PostUpdate(float dt)
 {
 	Grid.Render();
 
-	////Draw test here
-	glLineWidth(2.0f);
-	glBegin(GL_TRIANGLES);
+	////Uncomment to draw cube
+	//glLineWidth(2.0f);
+	//glBegin(GL_TRIANGLES);
 
-	glEnd();
-	glLineWidth(1.0f);
+	//glEnd();
+	//glLineWidth(1.0f);
 
 
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glEnableClientState(GL_VERTEX_ARRAY);
-	glVertexPointer(3, GL_FLOAT, 0, NULL);
-	glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, NULL);
+	//glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	//glEnableClientState(GL_VERTEX_ARRAY);
+	//glVertexPointer(3, GL_FLOAT, 0, NULL);
+	//glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, NULL);
+
+	App->geometry->RenderScene();
 
 	App->editor->DrawEditor();
 

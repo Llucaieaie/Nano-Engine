@@ -11,6 +11,7 @@
 
 ModuleEditor::ModuleEditor(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
+    alignText = new std::vector<std::string>();
 }
 
 ModuleEditor::~ModuleEditor()
@@ -70,9 +71,12 @@ void ModuleEditor::DrawEditor()
         }
         if (ImGui::BeginMenu("Configuration"))
         {
-            if (ImGui::MenuItem("Inputs")) {
+            if (ImGui::MenuItem("Inputs"))
                 isInputWindow = !isInputWindow;
-            }
+
+            if (ImGui::MenuItem("Console"))
+                isConsoleWindow = !isConsoleWindow;
+
             ImGui::EndMenu();
         }
         ImGui::EndMainMenuBar();
@@ -80,6 +84,18 @@ void ModuleEditor::DrawEditor()
 
     if (isInputWindow)
         ShowInputInfo();
+
+    if (isConsoleWindow)
+        ShowConsole();
+
+    //if (ImGui::BeginMenu("Console"))
+    //{
+    //    if (ImGui::MenuItem("Open")) {
+    //        isConsoleWindow = true;
+    //    }
+    //    ImGui::EndMenu;
+    //}
+ 
 
     //if (ImGui::Begin("Configuration"))
     //{
@@ -99,6 +115,7 @@ bool ModuleEditor::CleanUp()
     ImGui_ImplSDL2_Shutdown();
     ImGui::DestroyContext();
 
+    RELEASE(alignText);
     return true;
 }
 
@@ -121,7 +138,6 @@ void ModuleEditor::AddFPS(const float aFPS)
         mFPSLog[mFPSLog.capacity() - 1] = aFPS;
     }
 }
-
 
 void ModuleEditor::ShowAboutInfo()
 {
@@ -168,19 +184,13 @@ void ModuleEditor::ShowAboutInfo()
     }
 }
 
-
 void ModuleEditor::ShowInputInfo() 
 {
     ImGuiIO& io = ImGui::GetIO();
-    if (ImGui::Begin("Inputs", nullptr, ImGuiWindowFlags_NoCollapse))
+    if (ImGui::Begin("Inputs", &isInputWindow, ImGuiWindowFlags_NoCollapse))
     {
-        if (ImGui::BeginItemTooltip())
-        {
-            ImGui::PushTextWrapPos(ImGui::GetFontSize() * 35.0f);
-            ImGui::TextUnformatted("View inputs.\nConfig->Inputs to close window");
-            ImGui::PopTextWrapPos();
-            ImGui::EndTooltip();
-        }
+        //ItemTooltip("View inputs.");
+
         if (ImGui::IsMousePosValid())
             ImGui::Text("Mouse pos: (%g, %g)", io.MousePos.x, io.MousePos.y);
         else
@@ -204,5 +214,35 @@ void ModuleEditor::ShowInputInfo()
         ImGui::Text("Chars queue:");       for (int i = 0; i < io.InputQueueCharacters.Size; i++) { ImWchar c = io.InputQueueCharacters[i]; ImGui::SameLine();  ImGui::Text("\'%c\' (0x%04X)", (c > ' ' && c <= 255) ? (char)c : '?', c); } // FIXME: We should convert 'c' to UTF-8 here but the functions are not public.
 
         ImGui::End();
+    }
+}
+
+void ModuleEditor::pushText(const char* text) {
+    if (alignText != nullptr) {
+        alignText->push_back(text);
+    }
+}
+
+void ModuleEditor::ShowConsole() {
+
+    if(!ImGui::Begin("Console", &isConsoleWindow, ImGuiWindowFlags_NoCollapse)) {
+        ImGui::End();
+    }
+    
+    for (size_t i = 0; i < alignText->size(); ++i)
+    {
+        ImGui::Text((*alignText)[i].c_str());
+    }
+
+    ImGui::End();
+}
+
+void ModuleEditor::ItemTooltip(const char* text) {
+    if (ImGui::BeginItemTooltip())
+    {
+        ImGui::PushTextWrapPos(ImGui::GetFontSize() * 35.0f);
+        ImGui::TextUnformatted(text);
+        ImGui::PopTextWrapPos();
+        ImGui::EndTooltip();
     }
 }

@@ -21,6 +21,7 @@ public:
 	~ModuleRenderer3D();
 
 	bool Init();
+	bool Start() override;
 	update_status PreUpdate(float dt);
 	update_status PostUpdate(float dt);
 	bool CleanUp();
@@ -36,7 +37,7 @@ public:
 	//You won't need this after using Frustum
 	mat4x4 ProjectionMatrix;
 
-	GLuint VBO = 0; //Vertex Buffer Object
+	GLuint VBO; //Vertex Buffer Object
 	GLuint EBO;
 	GLuint VAO;
 };

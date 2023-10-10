@@ -2,7 +2,7 @@
 #include "Module.h"
 #include "Globals.h"
 #include <vector>
-
+#include <string>
 
 class ModuleEditor : public Module
 {
@@ -19,10 +19,15 @@ public:
 
 	void ShowAboutInfo();
 	void ShowInputInfo();
+	void ShowConsole();
 
-	bool isInputWindow;
+
+	bool isInputWindow = false;
+	bool isConsoleWindow = false;
 
 	std::vector<float> mFPSLog;
-};
+	std::vector<std::string>* alignText;
 
-static void HelpMarker(const char* desc);
+	void pushText(const char* text);
+	void ItemTooltip(const char* text);
+};

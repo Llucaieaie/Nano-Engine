@@ -8,6 +8,7 @@
 #include "ModuleRenderer3D.h"
 #include "ModuleCamera3D.h"
 #include "ModuleEditor.h"
+#include "ModuleGeometry.h"
 
 #include<vector>
 
@@ -19,15 +20,14 @@ public:
 	ModuleRenderer3D* renderer3D;
 	ModuleCamera3D* camera;
 	ModuleEditor* editor;
+	ModuleGeometry* geometry;
 
 private:
-
 	Timer	ms_timer;
 	float	dt;
 	std::vector<Module*> list_modules;
 
 public:
-
 	Application();
 	~Application();
 
@@ -41,3 +41,5 @@ private:
 	void PrepareUpdate();
 	void FinishUpdate();
 };
+
+extern Application* App;
