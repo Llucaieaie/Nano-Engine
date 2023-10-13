@@ -154,7 +154,7 @@ bool ModuleRenderer3D::Init()
 
 bool ModuleRenderer3D::Start() {
 
-	App->geometry->LoadFile("Assets/Models/BakerHouse.fbx");
+	//App->geometry->LoadFile("Assets/Models/BakerHouse.fbx");
 	return false;
 }
 // PreUpdate: clear buffer

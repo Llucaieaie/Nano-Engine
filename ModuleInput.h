@@ -23,6 +23,8 @@ public:
 	update_status PreUpdate(float dt);
 	bool CleanUp();
 
+	void LoadDroppedFile();
+
 	KEY_STATE GetKey(int id) const
 	{
 		return keyboard[id];
@@ -67,4 +69,6 @@ private:
 	int mouse_x_motion;
 	int mouse_y_motion;
 	//int mouse_z_motion;
+
+	char* filePath;
 };

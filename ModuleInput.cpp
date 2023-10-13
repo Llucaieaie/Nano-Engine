@@ -105,6 +105,14 @@ update_status ModuleInput::PreUpdate(float dt)
 			mouse_y_motion = e.motion.yrel / SCREEN_SIZE;
 			break;
 
+			case SDL_DROPFILE:
+				filePath = e.drop.file;
+				// Shows directory of dropped file
+				LoadDroppedFile();
+				SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "File dropped", filePath, App->window->window);
+				SDL_free(filePath);
+				break;
+
 			case SDL_QUIT:
 			quit = true;
 			break;
@@ -114,6 +122,7 @@ update_status ModuleInput::PreUpdate(float dt)
 				if(e.window.event == SDL_WINDOWEVENT_RESIZED)
 					App->renderer3D->OnResize(e.window.data1, e.window.data2);
 			}
+
 		}
 	}
 
@@ -129,4 +138,8 @@ bool ModuleInput::CleanUp()
 	LOG("Quitting SDL input event subsystem");
 	SDL_QuitSubSystem(SDL_INIT_EVENTS);
 	return true;
+}
+
+void ModuleInput::LoadDroppedFile() {
+	App->geometry->LoadFile(filePath);
 }
