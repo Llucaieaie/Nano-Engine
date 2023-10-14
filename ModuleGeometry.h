@@ -11,6 +11,8 @@
 #include "Assimp/include/scene.h"
 #include "Assimp/include/postprocess.h"
 
+#include "glmath.h"
+
 #pragma comment (lib, "Assimp/libx86/assimp.lib")
 
 #include <vector>
@@ -30,7 +32,10 @@ struct Mesh
 	GLuint VAO;
 	GLuint EBO;
 
+	vec3 GetVectorFromIndex(float* startValue);
+
 	void Render();
+	void ShowNormals();
 };
 
 

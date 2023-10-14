@@ -121,11 +121,50 @@ void ModuleGeometry::BufferMesh(Mesh* mesh)
 
 void ModuleGeometry::RenderScene()
 {
+    bool showNormals = true;
     for (size_t i = 0; i < meshVector.size(); i++) {
         meshVector[i]->Render();
+        if(showNormals)
+            meshVector[i]->ShowNormals();
     }
 }
 
+void Mesh::ShowNormals()
+{
+    //Line length
+    float normalLenght = 0.2f;
+    
+    glColor3f(1, 0, 0);
+    glBegin(GL_LINES);
+
+    //Calculate face normals
+    for (int i = 0; i < num_index; i += 3)
+    {
+        vec3 A = GetVectorFromIndex(&vertex[index[i] * 3]);
+        vec3 B = GetVectorFromIndex(&vertex[index[i + 1] * 3]);
+        vec3 C = GetVectorFromIndex(&vertex[index[i + 2] * 3]);
+
+        vec3 middle((A.x + B.x + C.x) / 3.f, (A.y + B.y + C.y) / 3.f, (A.z + B.z + C.z) / 3.f);
+
+        vec3 crossVec = cross((B - A), (C - A));
+        vec3 normalDirection = normalize(crossVec);
+
+        glVertex3f(middle.x, middle.y, middle.z);
+        glVertex3f(middle.x + normalDirection.x * normalLenght, middle.y + normalDirection.y * normalLenght, middle.z + normalDirection.z * normalLenght);
+    }
+    glEnd();
+    glPointSize(1.f);
+    glColor3f(1, 1, 1);
+}
+
+vec3 Mesh::GetVectorFromIndex(float* startValue)
+{
+    float x = *startValue++;
+    float y = *startValue++;
+    float z = *startValue++;
+
+    return vec3(x, y, z);
+}
 
 bool ModuleGeometry::CleanUp()
 {
