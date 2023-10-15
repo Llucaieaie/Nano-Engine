@@ -15,6 +15,11 @@
 #pragma comment (lib, "MathGeoLib/libx86/Release/MathGeoLib.lib") /* link Microsoft OpenGL lib   */
 #endif // _DEBUG
 
+//#include "DevIL/include/il.h"
+//#include "DevIL/include/ilut.h"
+//#pragma comment (lib, "DevIL/libx86/DevIL.lib")
+//#pragma comment (lib, "DevIL/libx86/ILU.lib")
+//#pragma comment (lib, "DevIL/libx86/ILUT.lib")
 
 ModuleRenderer3D::ModuleRenderer3D(Application* app, bool start_enabled) : Module(app, start_enabled)
 {

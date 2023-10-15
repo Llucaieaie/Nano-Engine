@@ -55,6 +55,12 @@
     <Filter Include="Externals\Assimp\port">
       <UniqueIdentifier>{9dcba77e-da71-41f1-b476-124a3ab76e3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Externals\PhisFs">
+      <UniqueIdentifier>{e8214f20-6dc1-4bbf-9d17-2403e56ab997}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externals\DevIL">
+      <UniqueIdentifier>{35bfca77-1a13-418c-8d24-88f186e137c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -423,6 +429,36 @@
     <ClInclude Include="Assimp\include\port\AndroidJNI\AndroidJNIIOSystem.h">
       <Filter>Externals\Assimp\port</Filter>
     </ClInclude>
+    <ClInclude Include="PhysFS\include\physfs.h">
+      <Filter>Externals\PhisFs</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleFileSystem.h">
+      <Filter>Sources\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\devil_cpp_wrapper.hpp">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\devil_internal_exports.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\il.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\il_wrap.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\ilu.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\ilu_region.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\ilut.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="DevIL\include\ilut_config.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ModuleCamera3D.cpp">
@@ -590,6 +626,9 @@
     <ClCompile Include="ModuleGeometry.cpp">
       <Filter>Sources\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="ModuleFileSystem.cpp">
+      <Filter>Sources\Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="MathGeoLib\include\Geometry\KDTree.inl">
@@ -630,6 +669,9 @@
     </None>
     <None Include="Assimp\include\vector3.inl">
       <Filter>Externals\Assimp</Filter>
+    </None>
+    <None Include="DevIL\include\DevIL.i">
+      <Filter>Externals\DevIL</Filter>
     </None>
   </ItemGroup>
 </Project>
