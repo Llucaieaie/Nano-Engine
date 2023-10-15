@@ -15,6 +15,9 @@ public:
 	void DrawEditor();
 	bool CleanUp();
 
+	void ShowMenuBar();
+	void ShowFileExplorer();
+
 	void AddFPS(const float aFPS);
 
 	void ShowAboutInfo();
@@ -22,12 +25,15 @@ public:
 	void ShowConsole();
 
 
-	bool isInputWindow = false;
-	bool isConsoleWindow = false;
+	bool isFileExplorer;
+	bool isInputWindow;
+	bool isConsoleWindow;
 
 	std::vector<float> mFPSLog;
 	std::vector<std::string>* alignText;
 
 	void pushText(const char* text);
 	void ItemTooltip(const char* text);
+
+	float menuBarMargin;
 };

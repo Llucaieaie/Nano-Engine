@@ -35,8 +35,10 @@ bool ModuleEditor::Init()
 
     mFPSLog.reserve(30);
 
+    isFileExplorer = true;
     isInputWindow = false;
-
+    isConsoleWindow = false;
+    
     return true;
 }
 
@@ -47,6 +49,40 @@ void ModuleEditor::DrawEditor()
     ImGui_ImplSDL2_NewFrame();
     ImGui::NewFrame();
 
+    //Menu bar
+    ShowMenuBar();
+
+    //Show windows
+    if(isFileExplorer)
+        ShowFileExplorer();
+    if (isInputWindow)
+        ShowInputInfo();
+    if (isConsoleWindow)
+        ShowConsole();
+
+    //if (ImGui::Begin("Configuration"))
+    //{
+    //    ImGui::PlotHistogram("FPS", mFPSLog.data(), mFPSLog.size());
+    //    ImGui::End();
+    //}
+
+    ImGui::ShowDemoWindow();
+    
+    ImGui::Render();
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+}
+
+bool ModuleEditor::CleanUp()
+{
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplSDL2_Shutdown();
+    ImGui::DestroyContext();
+
+    RELEASE(alignText);
+    return true;
+}
+
+void ModuleEditor::ShowMenuBar() {
     if (ImGui::BeginMainMenuBar())
     {
         if (ImGui::BeginMenu("File"))
@@ -81,42 +117,17 @@ void ModuleEditor::DrawEditor()
         }
         ImGui::EndMainMenuBar();
     }
-
-    if (isInputWindow)
-        ShowInputInfo();
-
-    if (isConsoleWindow)
-        ShowConsole();
-
-    //if (ImGui::BeginMenu("Console"))
-    //{
-    //    if (ImGui::MenuItem("Open")) {
-    //        isConsoleWindow = true;
-    //    }
-    //    ImGui::EndMenu;
-    //}
- 
-
-    //if (ImGui::Begin("Configuration"))
-    //{
-    //    ImGui::PlotHistogram("FPS", mFPSLog.data(), mFPSLog.size());
-    //    ImGui::End();
-    //}
-
-    ImGui::ShowDemoWindow();
-    
-    ImGui::Render();
-    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
-bool ModuleEditor::CleanUp()
-{
-    ImGui_ImplOpenGL3_Shutdown();
-    ImGui_ImplSDL2_Shutdown();
-    ImGui::DestroyContext();
-
-    RELEASE(alignText);
-    return true;
+void ModuleEditor::ShowFileExplorer() {
+    menuBarMargin = ImGui::GetTextLineHeightWithSpacing();
+    ImGui::SetNextWindowPos(ImVec2(0, menuBarMargin), ImGuiCond_Appearing);
+    ImGui::SetNextWindowSize(ImVec2(250, SCREEN_HEIGHT - menuBarMargin), ImGuiCond_Appearing);
+    ImGui::Begin("Explorador de Archivos", &isFileExplorer, ImGuiWindowFlags_NoCollapse);
+    ImGui::Text("Nuevo Proyecto");
+    ImGui::Separator();
+    ImGui::Text("BakerHouse.fbx");
+    ImGui::End();
 }
 
 void ModuleEditor::AddFPS(const float aFPS)
