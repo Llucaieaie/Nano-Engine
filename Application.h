@@ -9,6 +9,7 @@
 #include "ModuleCamera3D.h"
 #include "ModuleEditor.h"
 #include "ModuleGeometry.h"
+#include "ModuleTextures.h"
 #include "ModuleFileSystem.h"
 
 #include<vector>
@@ -22,6 +23,7 @@ public:
 	ModuleCamera3D* camera;
 	ModuleEditor* editor;
 	ModuleGeometry* geometry;
+	ModuleTextures* textures;
 	ModuleFileSystem* fileSystem;
 
 private:

@@ -14,10 +14,11 @@
 #include "glmath.h"
 
 #pragma comment (lib, "Assimp/libx86/assimp.lib")
+#pragma comment (lib, "Glew/libx86/glew32.lib")
 
 #include <vector>
 
-#define VERTEX_ARGUMENTS 3
+#define VERTEX_ARGUMENTS 5
 
 struct Mesh
 {

@@ -8,6 +8,7 @@ Application::Application()
 	camera = new ModuleCamera3D(this);
 	editor = new ModuleEditor(this);
 	geometry = new ModuleGeometry(this);
+	textures = new ModuleTextures(this);
 	fileSystem = new ModuleFileSystem(this);
 
 	// The order of calls is very important!
@@ -20,6 +21,7 @@ Application::Application()
 	AddModule(input);
 
 	AddModule(geometry);
+	AddModule(textures);
 	AddModule(fileSystem);
 
 	AddModule(renderer3D);

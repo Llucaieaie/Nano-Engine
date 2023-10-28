@@ -1,5 +1,7 @@
 #include "ModuleGeometry.h"
 #include "Application.h"
+#include "ModuleTextures.h"
+#include "Glew/include/glew.h"
 
 
 
@@ -46,16 +48,27 @@ void ModuleGeometry::LoadFile(const char* file_path)
 
 void ModuleGeometry::ImportMesh(aiMesh* aiMesh)
 {
-    Mesh* ourMesh = new Mesh();
-    ourMesh->num_vertex = aiMesh->mNumVertices;
-    ourMesh->vertex = new float[ourMesh->num_vertex * 3];
+    Mesh* mesh = new Mesh();
+    mesh->num_vertex = aiMesh->mNumVertices;
+    mesh->vertex = new float[mesh->num_vertex * VERTEX_ARGUMENTS];
 
-    memcpy(ourMesh->vertex, aiMesh->mVertices, sizeof(float) * ourMesh->num_vertex * 3);
+    //memcpy(ourMesh->vertex, aiMesh->mVertices, sizeof(float) * ourMesh->num_vertex * 3);
+    
+    for (int k = 0; k < mesh->num_vertex; k++) {
+
+        mesh->vertex[k * VERTEX_ARGUMENTS] = aiMesh->mVertices[k].x;
+        mesh->vertex[k * VERTEX_ARGUMENTS + 1] = aiMesh->mVertices[k].y;
+        mesh->vertex[k * VERTEX_ARGUMENTS + 2] = aiMesh->mVertices[k].z;
+
+        mesh->vertex[k * VERTEX_ARGUMENTS + 3] = aiMesh->mTextureCoords[0][k].x;
+        mesh->vertex[k * VERTEX_ARGUMENTS + 4] = aiMesh->mTextureCoords[0][k].y;
+
+    }
 
     if (aiMesh->HasFaces())
     {
-        ourMesh->num_index = aiMesh->mNumFaces * 3;
-        ourMesh->index = new uint[ourMesh->num_index];
+        mesh->num_index = aiMesh->mNumFaces * 3;
+        mesh->index = new uint[mesh->num_index];
 
         for (uint i = 0; i < aiMesh->mNumFaces; ++i)
         {
@@ -65,43 +78,47 @@ void ModuleGeometry::ImportMesh(aiMesh* aiMesh)
             }
             else
             {
-                memcpy(&ourMesh->index[i * 3], aiMesh->mFaces[i].mIndices, 3 * sizeof(uint));
+                memcpy(&mesh->index[i * 3], aiMesh->mFaces[i].mIndices, 3 * sizeof(uint));
             }
         }
+        mesh->VBO = 0;
+        mesh->EBO = 0;
+        mesh->VAO = App->textures->textureID;
 
-        ourMesh->VBO = 0;
-        ourMesh->EBO = 0;
+        glGenBuffers(1, (GLuint*)&(mesh->id_vertex));
+        glBindBuffer(GL_ARRAY_BUFFER, mesh->id_vertex);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(float) * mesh->num_vertex * VERTEX_ARGUMENTS, mesh->vertex, GL_STATIC_DRAW);
 
-        glGenBuffers(1, &(ourMesh->VBO));
-        glGenBuffers(1, &(ourMesh->EBO));
-        glGenVertexArrays(1, &(ourMesh->VAO));
+        glGenBuffers(1, (GLuint*)&(mesh->id_index));
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh->id_index);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint) * mesh->num_index, mesh->index, GL_STATIC_DRAW);
 
-        glBindBuffer(GL_ARRAY_BUFFER, ourMesh->VBO);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(float) * ourMesh->num_vertex * VERTEX_ARGUMENTS, ourMesh->vertex, GL_STATIC_DRAW);
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ourMesh->EBO);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint) * ourMesh->num_index, ourMesh->index, GL_STATIC_DRAW);
-
-        meshVector.push_back(ourMesh);
+        meshVector.push_back(mesh);
     }
     else
     {
-        delete ourMesh;
+        delete mesh;
     }
 }
 
 void Mesh::Render()
 {
+    glEnable(GL_TEXTURE_2D);
+    glEnable(GL_TEXTURE_COORD_ARRAY);
     glEnableClientState(GL_VERTEX_ARRAY);
+    glBindBuffer(GL_ARRAY_BUFFER, id_vertex);
 
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glVertexPointer(3, GL_FLOAT, sizeof(float) * VERTEX_ARGUMENTS, NULL);
+    glTexCoordPointer(2, GL_FLOAT, sizeof(float) * VERTEX_ARGUMENTS, (void*)(sizeof(float) * 3));
+    glBindTexture(GL_TEXTURE_2D, VAO);
 
-    glVertexPointer(3, GL_FLOAT, 0, NULL);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, id_index);
     glDrawElements(GL_TRIANGLES, num_index, GL_UNSIGNED_INT, NULL);
 
+    glBindTexture(GL_TEXTURE_2D, 0);
     glDisableClientState(GL_VERTEX_ARRAY);
+    glDisable(GL_TEXTURE_2D);
+    glDisable(GL_TEXTURE_COORD_ARRAY);
 }
 
 void ModuleGeometry::BufferMesh(Mesh* mesh)
@@ -131,30 +148,27 @@ void ModuleGeometry::RenderScene()
 
 void Mesh::ShowNormals()
 {
-    //Line length
-    float normalLenght = 0.2f;
+    float normalLenght = 0.35f;
     
-    glColor3f(1, 0, 0);
+    glColor3f(0.8, 0, 0);
     glBegin(GL_LINES);
-
-    //Calculate face normals
+    
+    vec3 a, b, c;
     for (int i = 0; i < num_index; i += 3)
     {
-        vec3 A = GetVectorFromIndex(&vertex[index[i] * 3]);
-        vec3 B = GetVectorFromIndex(&vertex[index[i + 1] * 3]);
-        vec3 C = GetVectorFromIndex(&vertex[index[i + 2] * 3]);
+        a = GetVectorFromIndex(&vertex[index[i] * VERTEX_ARGUMENTS]);
+        b = GetVectorFromIndex(&vertex[index[i + 1] * VERTEX_ARGUMENTS]);
+        c = GetVectorFromIndex(&vertex[index[i + 2] * VERTEX_ARGUMENTS]);
 
-        vec3 middle((A.x + B.x + C.x) / 3.f, (A.y + B.y + C.y) / 3.f, (A.z + B.z + C.z) / 3.f);
-
-        vec3 crossVec = cross((B - A), (C - A));
+        vec3 center((a.x + b.x + c.x) / 3, (a.y + b.y + c.y) / 3, (a.z + b.z + c.z) / 3);
+        vec3 crossVec = cross((b - a), (c - a));
         vec3 normalDirection = normalize(crossVec);
 
-        glVertex3f(middle.x, middle.y, middle.z);
-        glVertex3f(middle.x + normalDirection.x * normalLenght, middle.y + normalDirection.y * normalLenght, middle.z + normalDirection.z * normalLenght);
+        glVertex3f(center.x, center.y, center.z);
+        glVertex3f(center.x + normalDirection.x * normalLenght, center.y + normalDirection.y * normalLenght, center.z + normalDirection.z * normalLenght);
     }
-    glEnd();
-    glPointSize(1.f);
     glColor3f(1, 1, 1);
+    glEnd();
 }
 
 vec3 Mesh::GetVectorFromIndex(float* startValue)
