@@ -93,7 +93,7 @@ bool ModuleTextures::TexFromImg(GLuint* imgData, GLuint width, GLuint height)
 	return true;
 }
 
-bool ModuleTextures::LoadTextures(std::string path)
+bool ModuleTextures::LoadTextures(const char* path)
 {
 	bool textureLoaded = false;
 
@@ -103,7 +103,7 @@ bool ModuleTextures::LoadTextures(std::string path)
 	ilBindImage(imgID);
 
 	//Load image
-	ILboolean success = ilLoadImage(path.c_str());
+	ILboolean success = ilLoadImage(path);
 
 	//Image loaded successfully
 	if (success == IL_TRUE)
@@ -122,7 +122,7 @@ bool ModuleTextures::LoadTextures(std::string path)
 		//Report error
 		if (!textureLoaded)
 		{
-			printf("Unable to load %s\n", path.c_str());
+			printf("Unable to load %s\n", path);
 		}
 	}
 	return textureLoaded;

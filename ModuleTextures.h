@@ -26,7 +26,7 @@ public:
 	bool CleanUp();
 
 	bool TexFromImg(GLuint* imgData, GLuint width, GLuint height);
-	bool LoadTextures(std::string path);
+	bool LoadTextures(const char* path);
 	void FreeTextures();
 
 	GLubyte checkerImage[CHECKERS_HEIGHT][CHECKERS_WIDTH][4];

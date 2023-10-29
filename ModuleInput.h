@@ -23,7 +23,7 @@ public:
 	update_status PreUpdate(float dt);
 	bool CleanUp();
 
-	void LoadDroppedFile();
+	void LoadDroppedFile(const char* fileName);
 
 	KEY_STATE GetKey(int id) const
 	{

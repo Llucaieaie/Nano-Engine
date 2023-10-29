@@ -108,7 +108,7 @@ update_status ModuleInput::PreUpdate(float dt)
 			case SDL_DROPFILE:
 				filePath = e.drop.file;
 				// Shows directory of dropped file
-				LoadDroppedFile();
+				LoadDroppedFile(e.drop.file);
 				SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "File dropped", filePath, App->window->window);
 				SDL_free(filePath);
 				break;
@@ -140,6 +140,21 @@ bool ModuleInput::CleanUp()
 	return true;
 }
 
-void ModuleInput::LoadDroppedFile() {
-	App->geometry->LoadFile(filePath);
+void ModuleInput::LoadDroppedFile(const char* fileName) {
+	const char* extension = strrchr(fileName, '.');
+	if (extension != nullptr) {
+		extension++;
+	}
+	if (strcmp(extension, "fbx") == 0)
+	{
+		App->geometry->LoadFile(fileName);
+	}
+	if (strcmp(extension, "png") == 0 || strcmp(extension, "dds") == 0)
+	{
+		App->textures->LoadTextures(fileName);
+	}
+	else
+	{
+		LOG("Error loading file");
+	}
 }
