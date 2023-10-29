@@ -160,6 +160,7 @@ bool ModuleRenderer3D::Init()
 bool ModuleRenderer3D::Start() {
 
 	App->geometry->LoadFile("Assets/Models/BakerHouse.fbx");
+	App->textures->LoadTextures("Assets/Textures/BakerHouse.png");
 	return false;
 }
 // PreUpdate: clear buffer

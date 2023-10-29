@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef MODULE_GEOMETRY
 #define MODULE_GEOMETRY
 
@@ -7,11 +5,11 @@
 #include "Globals.h"
 #include "Glew/include/glew.h"
 
+#include "glmath.h"
+
 #include "Assimp/include/cimport.h"
 #include "Assimp/include/scene.h"
 #include "Assimp/include/postprocess.h"
-
-#include "glmath.h"
 
 #pragma comment (lib, "Assimp/libx86/assimp.lib")
 #pragma comment (lib, "Glew/libx86/glew32.lib")
@@ -32,6 +30,9 @@ struct Mesh
 	GLuint VBO;
 	GLuint VAO;
 	GLuint EBO;
+
+	GLuint texture_height;
+	GLuint texture_width;
 
 	vec3 GetVectorFromIndex(float* startValue);
 

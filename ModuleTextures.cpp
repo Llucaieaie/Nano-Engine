@@ -32,13 +32,19 @@ bool ModuleTextures::Start()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, CHECKERS_WIDTH, CHECKERS_HEIGHT,
 		0, GL_RGBA, GL_UNSIGNED_BYTE, checkerImage);
 
-	//glGenerateMipmap(GL_TEXTURE_2D);
+	glGenerateMipmap(GL_TEXTURE_2D);
 
 	glBindTexture(GL_TEXTURE_2D, 0);
 	glDisable(GL_TEXTURE_2D);
+
+
+	glClearColor(0.f, 0.f, 0.f, 1.f);
+
+	ilInit();
 
 	return true;
 }
@@ -48,4 +54,88 @@ bool ModuleTextures::Start()
 bool ModuleTextures::CleanUp()
 {
 	return true;
+}
+
+bool ModuleTextures::TexFromImg(GLuint* imgData, GLuint width, GLuint height)
+{
+	FreeTextures();
+
+	textureWidth = width;
+	textureHeight = height;
+
+	glEnable(GL_TEXTURE_2D);
+
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+	glGenTextures(1, &textureID);
+	glBindTexture(GL_TEXTURE_2D, textureID);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
+	//Invert the texture
+	GLuint* invertedImgData = new GLuint[width * height];
+	for (GLuint i = 0; i < height; i++) {
+		for (GLuint j = 0; j < width; j++) {
+			invertedImgData[i * width + j] = imgData[(height - 1 - i) * width + j];
+		}
+	}
+
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height,
+		0, GL_RGBA, GL_UNSIGNED_BYTE, invertedImgData);
+
+	//glGenerateMipmap(GL_TEXTURE_2D);
+
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glDisable(GL_TEXTURE_2D);
+	delete[] invertedImgData;
+
+	return true;
+}
+
+bool ModuleTextures::LoadTextures(std::string path)
+{
+	bool textureLoaded = false;
+
+	//Generate and set current image ID
+	ILuint imgID = 0;
+	ilGenImages(1, &imgID);
+	ilBindImage(imgID);
+
+	//Load image
+	ILboolean success = ilLoadImage(path.c_str());
+
+	//Image loaded successfully
+	if (success == IL_TRUE)
+	{
+		//Convert image to RGBA
+		success = ilConvertImage(IL_RGBA, IL_UNSIGNED_BYTE);
+		if (success == IL_TRUE)
+		{
+			//Create texture from file pixels
+			textureLoaded = TexFromImg((GLuint*)ilGetData(), (GLuint)ilGetInteger(IL_IMAGE_WIDTH), (GLuint)ilGetInteger(IL_IMAGE_HEIGHT));
+		}
+
+		//Delete file from memory
+		ilDeleteImages(1, &imgID);
+
+		//Report error
+		if (!textureLoaded)
+		{
+			printf("Unable to load %s\n", path.c_str());
+		}
+	}
+	return textureLoaded;
+}
+
+void ModuleTextures::FreeTextures()
+{
+	if (textureID != 0)
+	{
+		glDeleteTextures(1, &textureID);
+		textureID = 0;
+	}
+
+	textureWidth = 0;
+	textureHeight = 0;
 }

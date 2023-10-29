@@ -1,9 +1,12 @@
 #include "ModuleGeometry.h"
 #include "Application.h"
+#include "Globals.h"
 #include "ModuleTextures.h"
+#include "ModuleWindow.h"
+#include "ModuleRenderer3D.h"
 #include "Glew/include/glew.h"
 
-
+#include "Primitive.h"
 
 ModuleGeometry::ModuleGeometry(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
@@ -54,15 +57,15 @@ void ModuleGeometry::ImportMesh(aiMesh* aiMesh)
 
     //memcpy(ourMesh->vertex, aiMesh->mVertices, sizeof(float) * ourMesh->num_vertex * 3);
     
-    for (int k = 0; k < mesh->num_vertex; k++) {
+    for (int i = 0; i < mesh->num_vertex; i++) {
 
-        mesh->vertex[k * VERTEX_ARGUMENTS] = aiMesh->mVertices[k].x;
-        mesh->vertex[k * VERTEX_ARGUMENTS + 1] = aiMesh->mVertices[k].y;
-        mesh->vertex[k * VERTEX_ARGUMENTS + 2] = aiMesh->mVertices[k].z;
+        mesh->vertex[i * VERTEX_ARGUMENTS] = aiMesh->mVertices[i].x;
+        mesh->vertex[i * VERTEX_ARGUMENTS + 1] = aiMesh->mVertices[i].y;
+        mesh->vertex[i * VERTEX_ARGUMENTS + 2] = aiMesh->mVertices[i].z;
 
-        mesh->vertex[k * VERTEX_ARGUMENTS + 3] = aiMesh->mTextureCoords[0][k].x;
-        mesh->vertex[k * VERTEX_ARGUMENTS + 4] = aiMesh->mTextureCoords[0][k].y;
-
+        mesh->vertex[i * VERTEX_ARGUMENTS + 3] = aiMesh->mTextureCoords[0][i].x;
+        mesh->vertex[i * VERTEX_ARGUMENTS + 4] = aiMesh->mTextureCoords[0][i].y;
+        //mesh->vertex[i * VERTEX_ARGUMENTS + 4] = 1 - aiMesh->mTextureCoords[0][i].y;
     }
 
     if (aiMesh->HasFaces())
@@ -84,6 +87,8 @@ void ModuleGeometry::ImportMesh(aiMesh* aiMesh)
         mesh->VBO = 0;
         mesh->EBO = 0;
         mesh->VAO = App->textures->textureID;
+        mesh->texture_height = App->textures->textureWidth;
+        mesh->texture_width = App->textures->textureWidth;
 
         glGenBuffers(1, (GLuint*)&(mesh->id_vertex));
         glBindBuffer(GL_ARRAY_BUFFER, mesh->id_vertex);
