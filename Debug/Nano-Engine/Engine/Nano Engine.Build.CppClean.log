@@ -1,0 +1,65 @@
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\vc142.pdb
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\vc142.idb
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\plane.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\obb.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\linesegment.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\line.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\frustum.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\cylinder.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\cone.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\circle.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\capsule.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\aabb.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\lcg.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\imgui_widgets.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\imgui_tables.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\imgui_draw.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\imgui_demo.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\imgui.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\imgui_impl_sdlrenderer2.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\imgui_impl_sdl2.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\imgui_impl_opengl3.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\glmath.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\transformops.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\ssemath.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\quat.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\polynomial.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\mathops.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\mathlog.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\mathfunc.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\float4x4.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\float4.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\float3x4.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\float3x3.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\float3.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\float2.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\bitops.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\trianglemesh.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\triangle.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\sphere.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\ray.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\polyhedron.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\polygon.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\timer.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\log.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\modulewindow.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\moduletextures.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\modulerenderer3d.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\moduleinput.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\modulegeometry.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\modulefilesystem.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\moduleeditor.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\modulecamera3d.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\primitive.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\light.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\main.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\application.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\color.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\clock.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\parson.obj
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\nano engine.tlog\cl.command.1.tlog
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\nano engine.tlog\cl.read.1.tlog
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\nano engine.tlog\cl.write.1.tlog
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\nano engine.tlog\link.command.1.tlog
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\nano engine.tlog\link.read.1.tlog
+c:\users\lluc estruch\onedrive\documentos\github\nano-engine\debug\nano-engine\engine\nano engine.tlog\link.write.1.tlog

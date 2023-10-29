@@ -61,623 +61,644 @@
     <Filter Include="Externals\DevIL">
       <UniqueIdentifier>{35bfca77-1a13-418c-8d24-88f186e137c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Externals\GLMath">
+      <UniqueIdentifier>{b23abe91-b4b9-4527-ab4e-6e3aca516f32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Core">
+      <UniqueIdentifier>{695c6d46-17b0-4b19-9cdf-4acc6f5aec63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externals\Glew">
+      <UniqueIdentifier>{6d2750b7-da72-4154-95be-fbfc0bc41cb6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Module.h">
-      <Filter>Sources\Modules</Filter>
+    <ClInclude Include="Nano-Engine\Sources\Core\Application.h">
+      <Filter>Sources\Core</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleCamera3D.h">
-      <Filter>Sources\Modules</Filter>
+    <ClInclude Include="Nano-Engine\Sources\Core\Globals.h">
+      <Filter>Sources\Core</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleInput.h">
-      <Filter>Sources\Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleRenderer3D.h">
-      <Filter>Sources\Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleWindow.h">
-      <Filter>Sources\Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Application.h">
-      <Filter>Sources</Filter>
-    </ClInclude>
-    <ClInclude Include="Globals.h">
-      <Filter>Sources</Filter>
-    </ClInclude>
-    <ClInclude Include="Primitive.h">
-      <Filter>Sources\Helpers</Filter>
-    </ClInclude>
-    <ClInclude Include="Color.h">
-      <Filter>Sources\Containers</Filter>
-    </ClInclude>
-    <ClInclude Include="Light.h">
-      <Filter>Sources\Helpers</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.h">
+    <ClInclude Include="Nano-Engine\Sources\Tools\Timer.h">
       <Filter>Sources\Tools</Filter>
     </ClInclude>
-    <ClInclude Include="MathGeoLib\include\MathBuildConfig.h">
-      <Filter>Externals\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\MathGeoLib.h">
-      <Filter>Externals\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\MathGeoLibFwd.h">
-      <Filter>Externals\MathGeoLib</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\AABB.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\AABB2D.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\Capsule.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\Circle.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\Cone.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\Cylinder.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\Frustum.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\GeometryAll.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\GeomType.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\HitInfo.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\KDTree.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\Line.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\LineSegment.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\OBB.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\PBVolume.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\Plane.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\Polygon.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\Polyhedron.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\QuadTree.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\Ray.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\Sphere.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\Triangle.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Geometry\TriangleMesh.h">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Algorithm\Random\LCG.h">
-      <Filter>Externals\MathGeoLib\Algorithm\Random</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\TransformOps.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\assume.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\BitOps.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\Complex.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\CoordinateAxisConvention.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\FixedPoint.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\float2.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\float3.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\float3x3.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\float3x4.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\float4.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\float4_neon.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\float4_sse.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\float4x4.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\float4x4_neon.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\float4x4_sse.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\FloatCmp.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\MathAll.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\MathConstants.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\MathFunc.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\MathLog.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\MathNamespace.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\MathTypes.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\MatrixProxy.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\myassert.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\Polynomial.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\Quat.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\quat_simd.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\Rect.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\Reinterpret.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\sse_mathfun.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Math\SSEMath.h">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="MathGeoLib\include\Time\Clock.h">
-      <Filter>Externals\MathGeoLib\Time</Filter>
-    </ClInclude>
-    <ClInclude Include="glmath.h">
-      <Filter>Externals</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGui\imconfig.h">
-      <Filter>Externals\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGui\imgui.h">
-      <Filter>Externals\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGui\imgui_internal.h">
-      <Filter>Externals\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGui\imstb_rectpack.h">
-      <Filter>Externals\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGui\imstb_textedit.h">
-      <Filter>Externals\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGui\imstb_truetype.h">
-      <Filter>Externals\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGui\backends\imgui_impl_opengl3.h">
-      <Filter>Externals\ImGui\backends</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGui\backends\imgui_impl_opengl3_loader.h">
-      <Filter>Externals\ImGui\backends</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGui\backends\imgui_impl_sdl2.h">
-      <Filter>Externals\ImGui\backends</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGui\backends\imgui_impl_sdlrenderer2.h">
-      <Filter>Externals\ImGui\backends</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleEditor.h">
+    <ClInclude Include="Nano-Engine\Sources\Modules\Module.h">
       <Filter>Sources\Modules</Filter>
     </ClInclude>
-    <ClInclude Include="parson\parson.h">
-      <Filter>Externals\Parson</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleGeometry.h">
+    <ClInclude Include="Nano-Engine\Sources\Modules\ModuleCamera3D.h">
       <Filter>Sources\Modules</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\ai_assert.h">
+    <ClInclude Include="Nano-Engine\Sources\Modules\ModuleEditor.h">
+      <Filter>Sources\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\Modules\ModuleFileSystem.h">
+      <Filter>Sources\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\Modules\ModuleGeometry.h">
+      <Filter>Sources\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\Modules\ModuleInput.h">
+      <Filter>Sources\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\Modules\ModuleRenderer3D.h">
+      <Filter>Sources\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\Modules\ModuleTextures.h">
+      <Filter>Sources\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\Modules\ModuleWindow.h">
+      <Filter>Sources\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\Helpers\Light.h">
+      <Filter>Sources\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\Helpers\Primitive.h">
+      <Filter>Sources\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\Containers\Color.h">
+      <Filter>Sources\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\ai_assert.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\anim.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\anim.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\camera.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\camera.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\cexport.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\cexport.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\cfileio.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\cfileio.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\cimport.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\cimport.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\color4.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\color4.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\config.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\config.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\DefaultLogger.hpp">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\DefaultLogger.hpp">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\defs.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\defs.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\Exporter.hpp">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\Exporter.hpp">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\Importer.hpp">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\Importer.hpp">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\importerdesc.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\importerdesc.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\IOStream.hpp">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\IOStream.hpp">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\IOSystem.hpp">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\IOSystem.hpp">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\light.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\light.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\Logger.hpp">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\Logger.hpp">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\LogStream.hpp">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\LogStream.hpp">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\material.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\material.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\matrix3x3.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\matrix3x3.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\matrix4x4.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\matrix4x4.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\mesh.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\mesh.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\metadata.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\metadata.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\NullLogger.hpp">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\NullLogger.hpp">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\postprocess.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\postprocess.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\ProgressHandler.hpp">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\ProgressHandler.hpp">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\quaternion.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\quaternion.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\scene.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\scene.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\texture.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\texture.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\types.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\types.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\vector2.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\vector2.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\vector3.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\vector3.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\version.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\version.h">
       <Filter>Externals\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Assimp\include\Compiler\poppack1.h">
-      <Filter>Externals\Assimp\Compiler</Filter>
-    </ClInclude>
-    <ClInclude Include="Assimp\include\Compiler\pstdint.h">
-      <Filter>Externals\Assimp\Compiler</Filter>
-    </ClInclude>
-    <ClInclude Include="Assimp\include\Compiler\pushpack1.h">
-      <Filter>Externals\Assimp\Compiler</Filter>
-    </ClInclude>
-    <ClInclude Include="Assimp\include\port\AndroidJNI\AndroidJNIIOSystem.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\port\AndroidJNI\AndroidJNIIOSystem.h">
       <Filter>Externals\Assimp\port</Filter>
     </ClInclude>
-    <ClInclude Include="PhysFS\include\physfs.h">
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\Compiler\poppack1.h">
+      <Filter>Externals\Assimp\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\Compiler\pstdint.h">
+      <Filter>Externals\Assimp\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\Assimp\include\Compiler\pushpack1.h">
+      <Filter>Externals\Assimp\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\DevIL\include\devil_cpp_wrapper.hpp">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\DevIL\include\devil_internal_exports.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\DevIL\include\il.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\DevIL\include\il_wrap.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\DevIL\include\ilu.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\DevIL\include\ilu_region.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\DevIL\include\ilut.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\DevIL\include\ilut_config.h">
+      <Filter>Externals\DevIL</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\Glew\include\eglew.h">
+      <Filter>Externals\Glew</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\Glew\include\glew.h">
+      <Filter>Externals\Glew</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\Glew\include\glxew.h">
+      <Filter>Externals\Glew</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\Glew\include\wglew.h">
+      <Filter>Externals\Glew</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\GLMath\glmath.h">
+      <Filter>Externals\GLMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\ImGui\backends\imgui_impl_opengl3.h">
+      <Filter>Externals\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\ImGui\backends\imgui_impl_opengl3_loader.h">
+      <Filter>Externals\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\ImGui\backends\imgui_impl_sdl2.h">
+      <Filter>Externals\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\ImGui\backends\imgui_impl_sdlrenderer2.h">
+      <Filter>Externals\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\ImGui\imconfig.h">
+      <Filter>Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\ImGui\imgui.h">
+      <Filter>Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\ImGui\imgui_internal.h">
+      <Filter>Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\ImGui\imstb_rectpack.h">
+      <Filter>Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\ImGui\imstb_textedit.h">
+      <Filter>Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\ImGui\imstb_truetype.h">
+      <Filter>Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\parson\parson.h">
+      <Filter>Externals\Parson</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\PhysFS\include\physfs.h">
       <Filter>Externals\PhisFs</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleFileSystem.h">
-      <Filter>Sources\Modules</Filter>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Algorithm\Random\LCG.h">
+      <Filter>Externals\MathGeoLib\Algorithm\Random</Filter>
     </ClInclude>
-    <ClInclude Include="DevIL\include\devil_cpp_wrapper.hpp">
-      <Filter>Externals\DevIL</Filter>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\OBB.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="DevIL\include\devil_internal_exports.h">
-      <Filter>Externals\DevIL</Filter>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\PBVolume.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="DevIL\include\il.h">
-      <Filter>Externals\DevIL</Filter>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Plane.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="DevIL\include\il_wrap.h">
-      <Filter>Externals\DevIL</Filter>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Polygon.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="DevIL\include\ilu.h">
-      <Filter>Externals\DevIL</Filter>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Polyhedron.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="DevIL\include\ilu_region.h">
-      <Filter>Externals\DevIL</Filter>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\QuadTree.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="DevIL\include\ilut.h">
-      <Filter>Externals\DevIL</Filter>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Ray.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="DevIL\include\ilut_config.h">
-      <Filter>Externals\DevIL</Filter>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Sphere.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleTextures.h">
-      <Filter>Sources\Modules</Filter>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Triangle.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\TriangleMesh.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\AABB.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\AABB2D.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Capsule.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Circle.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Cone.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Cylinder.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Frustum.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\GeometryAll.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\GeomType.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\HitInfo.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\KDTree.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Line.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\LineSegment.h">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\MathAll.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\MathConstants.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\MathFunc.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\MathLog.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\MathNamespace.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\MathTypes.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\MatrixProxy.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\myassert.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\Polynomial.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\Quat.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\quat_simd.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\Rect.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\Reinterpret.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\sse_mathfun.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\SSEMath.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\TransformOps.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\assume.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\BitOps.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\Complex.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\CoordinateAxisConvention.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\FixedPoint.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\float2.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\float3.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\float3x3.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\float3x4.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\float4.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\float4_neon.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\float4_sse.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\float4x4.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\float4x4_neon.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\float4x4_sse.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Math\FloatCmp.h">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\Time\Clock.h">
+      <Filter>Externals\MathGeoLib\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\MathBuildConfig.h">
+      <Filter>Externals\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\MathGeoLib.h">
+      <Filter>Externals\MathGeoLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\MathGeoLibFwd.h">
+      <Filter>Externals\MathGeoLib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ModuleCamera3D.cpp">
-      <Filter>Sources\Modules</Filter>
+    <ClCompile Include="Nano-Engine\Sources\Core\Application.cpp">
+      <Filter>Sources\Core</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleInput.cpp">
-      <Filter>Sources\Modules</Filter>
+    <ClCompile Include="Nano-Engine\Sources\Core\Main.cpp">
+      <Filter>Sources\Core</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleRenderer3D.cpp">
-      <Filter>Sources\Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleWindow.cpp">
-      <Filter>Sources\Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="log.cpp">
+    <ClCompile Include="Nano-Engine\Sources\Tools\log.cpp">
       <Filter>Sources\Tools</Filter>
     </ClCompile>
-    <ClCompile Include="Timer.cpp">
+    <ClCompile Include="Nano-Engine\Sources\Tools\Timer.cpp">
       <Filter>Sources\Tools</Filter>
     </ClCompile>
-    <ClCompile Include="Application.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Nano-Engine\Sources\Modules\ModuleCamera3D.cpp">
+      <Filter>Sources\Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Nano-Engine\Sources\Modules\ModuleEditor.cpp">
+      <Filter>Sources\Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Primitive.cpp">
+    <ClCompile Include="Nano-Engine\Sources\Modules\ModuleFileSystem.cpp">
+      <Filter>Sources\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\Modules\ModuleGeometry.cpp">
+      <Filter>Sources\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\Modules\ModuleInput.cpp">
+      <Filter>Sources\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\Modules\ModuleRenderer3D.cpp">
+      <Filter>Sources\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\Modules\ModuleTextures.cpp">
+      <Filter>Sources\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\Modules\ModuleWindow.cpp">
+      <Filter>Sources\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\Helpers\Light.cpp">
       <Filter>Sources\Helpers</Filter>
     </ClCompile>
-    <ClCompile Include="Color.cpp">
+    <ClCompile Include="Nano-Engine\Sources\Helpers\Primitive.cpp">
+      <Filter>Sources\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\Containers\Color.cpp">
       <Filter>Sources\Containers</Filter>
     </ClCompile>
-    <ClCompile Include="Light.cpp">
-      <Filter>Sources\Helpers</Filter>
+    <ClCompile Include="Nano-Engine\Externals\GLMath\glmath.cpp">
+      <Filter>Externals\GLMath</Filter>
     </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\AABB.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\Capsule.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\Circle.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\Cone.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\Cylinder.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\Frustum.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\Line.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\LineSegment.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\OBB.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\Plane.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\Polygon.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\Polyhedron.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\Ray.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\Sphere.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\Triangle.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Geometry\TriangleMesh.cpp">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Algorithm\Random\LCG.cpp">
-      <Filter>Externals\MathGeoLib\Algorithm\Random</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\BitOps.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\float2.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\float3.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\float3x3.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\float3x4.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\float4.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\float4x4.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\MathFunc.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\MathLog.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\MathOps.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\Polynomial.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\Quat.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\SSEMath.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Math\TransformOps.cpp">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="MathGeoLib\include\Time\Clock.cpp">
-      <Filter>Externals\MathGeoLib\Time</Filter>
-    </ClCompile>
-    <ClCompile Include="glmath.cpp">
-      <Filter>Externals</Filter>
-    </ClCompile>
-    <ClCompile Include="ImGui\imgui.cpp">
-      <Filter>Externals\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="ImGui\imgui_demo.cpp">
-      <Filter>Externals\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="ImGui\imgui_draw.cpp">
-      <Filter>Externals\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="ImGui\imgui_tables.cpp">
-      <Filter>Externals\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="ImGui\imgui_widgets.cpp">
-      <Filter>Externals\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="ImGui\backends\imgui_impl_opengl3.cpp">
+    <ClCompile Include="Nano-Engine\Externals\ImGui\backends\imgui_impl_opengl3.cpp">
       <Filter>Externals\ImGui\backends</Filter>
     </ClCompile>
-    <ClCompile Include="ImGui\backends\imgui_impl_sdl2.cpp">
+    <ClCompile Include="Nano-Engine\Externals\ImGui\backends\imgui_impl_sdl2.cpp">
       <Filter>Externals\ImGui\backends</Filter>
     </ClCompile>
-    <ClCompile Include="ImGui\backends\imgui_impl_sdlrenderer2.cpp">
+    <ClCompile Include="Nano-Engine\Externals\ImGui\backends\imgui_impl_sdlrenderer2.cpp">
       <Filter>Externals\ImGui\backends</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleEditor.cpp">
-      <Filter>Sources\Modules</Filter>
+    <ClCompile Include="Nano-Engine\Externals\ImGui\imgui.cpp">
+      <Filter>Externals\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="parson\parson.c">
+    <ClCompile Include="Nano-Engine\Externals\ImGui\imgui_demo.cpp">
+      <Filter>Externals\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\ImGui\imgui_draw.cpp">
+      <Filter>Externals\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\ImGui\imgui_tables.cpp">
+      <Filter>Externals\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\ImGui\imgui_widgets.cpp">
+      <Filter>Externals\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\parson\parson.c">
       <Filter>Externals\Parson</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleGeometry.cpp">
-      <Filter>Sources\Modules</Filter>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Algorithm\Random\LCG.cpp">
+      <Filter>Externals\MathGeoLib\Algorithm\Random</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleFileSystem.cpp">
-      <Filter>Sources\Modules</Filter>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Plane.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleTextures.cpp">
-      <Filter>Sources\Modules</Filter>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Polygon.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Polyhedron.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Ray.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Sphere.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Triangle.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\TriangleMesh.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\AABB.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Capsule.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Circle.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Cone.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Cylinder.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Frustum.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\Line.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\LineSegment.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\OBB.cpp">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\MathFunc.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\MathLog.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\MathOps.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\Polynomial.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\Quat.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\SSEMath.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\TransformOps.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\BitOps.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\float2.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\float3.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\float3x3.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\float3x4.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\float4.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Math\float4x4.cpp">
+      <Filter>Externals\MathGeoLib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Time\Clock.cpp">
+      <Filter>Externals\MathGeoLib\Time</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="MathGeoLib\include\Geometry\KDTree.inl">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </None>
-    <None Include="MathGeoLib\include\Geometry\QuadTree.inl">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </None>
-    <None Include="MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_AVX.inl">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </None>
-    <None Include="MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_CPP.inl">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </None>
-    <None Include="MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_SSE.inl">
-      <Filter>Externals\MathGeoLib\Geometry</Filter>
-    </None>
-    <None Include="MathGeoLib\include\Math\Matrix.inl">
-      <Filter>Externals\MathGeoLib\Math</Filter>
-    </None>
-    <None Include="Assimp\include\color4.inl">
+    <None Include="Nano-Engine\Externals\Assimp\include\color4.inl">
       <Filter>Externals\Assimp</Filter>
     </None>
-    <None Include="Assimp\include\material.inl">
+    <None Include="Nano-Engine\Externals\Assimp\include\material.inl">
       <Filter>Externals\Assimp</Filter>
     </None>
-    <None Include="Assimp\include\matrix3x3.inl">
+    <None Include="Nano-Engine\Externals\Assimp\include\matrix3x3.inl">
       <Filter>Externals\Assimp</Filter>
     </None>
-    <None Include="Assimp\include\matrix4x4.inl">
+    <None Include="Nano-Engine\Externals\Assimp\include\matrix4x4.inl">
       <Filter>Externals\Assimp</Filter>
     </None>
-    <None Include="Assimp\include\quaternion.inl">
+    <None Include="Nano-Engine\Externals\Assimp\include\quaternion.inl">
       <Filter>Externals\Assimp</Filter>
     </None>
-    <None Include="Assimp\include\vector2.inl">
+    <None Include="Nano-Engine\Externals\Assimp\include\vector2.inl">
       <Filter>Externals\Assimp</Filter>
     </None>
-    <None Include="Assimp\include\vector3.inl">
+    <None Include="Nano-Engine\Externals\Assimp\include\vector3.inl">
       <Filter>Externals\Assimp</Filter>
     </None>
-    <None Include="DevIL\include\DevIL.i">
+    <None Include="Nano-Engine\Externals\DevIL\include\DevIL.i">
       <Filter>Externals\DevIL</Filter>
+    </None>
+    <None Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\QuadTree.inl">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </None>
+    <None Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_AVX.inl">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </None>
+    <None Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_CPP.inl">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </None>
+    <None Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\TriangleMesh_IntersectRay_SSE.inl">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </None>
+    <None Include="Nano-Engine\Externals\MathGeoLib\include\Geometry\KDTree.inl">
+      <Filter>Externals\MathGeoLib\Geometry</Filter>
+    </None>
+    <None Include="Nano-Engine\Externals\MathGeoLib\include\Math\Matrix.inl">
+      <Filter>Externals\MathGeoLib\Math</Filter>
     </None>
   </ItemGroup>
 </Project>
