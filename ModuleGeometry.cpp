@@ -6,8 +6,6 @@
 #include "ModuleRenderer3D.h"
 #include "Glew/include/glew.h"
 
-#include "Primitive.h"
-
 ModuleGeometry::ModuleGeometry(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
 }
@@ -152,23 +150,26 @@ void ModuleGeometry::RenderScene()
 }
 
 void Mesh::ShowNormals()
-{
-    float normalLenght = 0.35f;
-    
+{    
+    float normalLenght = 0.25f;
+
     glColor3f(0.8, 0, 0);
     glBegin(GL_LINES);
     
-    vec3 a, b, c;
+    float3 a, b, c;
     for (int i = 0; i < num_index; i += 3)
     {
         a = GetVectorFromIndex(&vertex[index[i] * VERTEX_ARGUMENTS]);
         b = GetVectorFromIndex(&vertex[index[i + 1] * VERTEX_ARGUMENTS]);
         c = GetVectorFromIndex(&vertex[index[i + 2] * VERTEX_ARGUMENTS]);
 
-        vec3 center((a.x + b.x + c.x) / 3, (a.y + b.y + c.y) / 3, (a.z + b.z + c.z) / 3);
-        vec3 crossVec = cross((b - a), (c - a));
-        vec3 normalDirection = normalize(crossVec);
-
+        float3 center((a.x + b.x + c.x) / 3, (a.y + b.y + c.y) / 3, (a.z + b.z + c.z) / 3);
+        float3 crossVec = Cross((b - a), (c - a));
+        float normalLenght = crossVec.Length()/100;
+        if (normalLenght < 0.2f) { normalLenght = 0.2f; }
+        float3 normalDirection = crossVec.Normalized();
+        
+        
         glVertex3f(center.x, center.y, center.z);
         glVertex3f(center.x + normalDirection.x * normalLenght, center.y + normalDirection.y * normalLenght, center.z + normalDirection.z * normalLenght);
     }
@@ -176,13 +177,13 @@ void Mesh::ShowNormals()
     glEnd();
 }
 
-vec3 Mesh::GetVectorFromIndex(float* startValue)
+float3 Mesh::GetVectorFromIndex(float* startValue)
 {
     float x = *startValue++;
     float y = *startValue++;
     float z = *startValue++;
 
-    return vec3(x, y, z);
+    return float3(x, y, z);
 }
 
 bool ModuleGeometry::CleanUp()

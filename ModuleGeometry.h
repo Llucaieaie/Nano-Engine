@@ -5,7 +5,8 @@
 #include "Globals.h"
 #include "Glew/include/glew.h"
 
-#include "glmath.h"
+//#include "glmath.h"
+#include "MathGeoLib/include/MathGeoLib.h"
 
 #include "Assimp/include/cimport.h"
 #include "Assimp/include/scene.h"
@@ -34,7 +35,7 @@ struct Mesh
 	GLuint texture_height;
 	GLuint texture_width;
 
-	vec3 GetVectorFromIndex(float* startValue);
+	float3 GetVectorFromIndex(float* startValue);
 
 	void Render();
 	void ShowNormals();
