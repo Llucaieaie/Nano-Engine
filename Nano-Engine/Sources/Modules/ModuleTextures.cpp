@@ -93,39 +93,34 @@ bool ModuleTextures::TexFromImg(GLuint* imgData, GLuint width, GLuint height)
 	return true;
 }
 
-bool ModuleTextures::LoadTextures(const char* path)
+bool ModuleTextures::LoadTextures(const char* texPath)
 {
-	bool textureLoaded = false;
+	bool isLoaded = false;
 
-	//Generate and set current image ID
 	ILuint imgID = 0;
+
 	ilGenImages(1, &imgID);
 	ilBindImage(imgID);
 
-	//Load image
-	ILboolean success = ilLoadImage(path);
+	ILboolean success = ilLoadImage(texPath);
 
-	//Image loaded successfully
 	if (success == IL_TRUE)
 	{
-		//Convert image to RGBA
 		success = ilConvertImage(IL_RGBA, IL_UNSIGNED_BYTE);
 		if (success == IL_TRUE)
 		{
-			//Create texture from file pixels
-			textureLoaded = TexFromImg((GLuint*)ilGetData(), (GLuint)ilGetInteger(IL_IMAGE_WIDTH), (GLuint)ilGetInteger(IL_IMAGE_HEIGHT));
+			TexFromImg((GLuint*)ilGetData(), (GLuint)ilGetInteger(IL_IMAGE_WIDTH), (GLuint)ilGetInteger(IL_IMAGE_HEIGHT));
+			isLoaded = true;
 		}
 
-		//Delete file from memory
 		ilDeleteImages(1, &imgID);
 
-		//Report error
-		if (!textureLoaded)
+		if (!isLoaded)
 		{
-			printf("Unable to load %s\n", path);
+			LOG("Error loading textures %s\n", texPath);
 		}
 	}
-	return textureLoaded;
+	return isLoaded;
 }
 
 void ModuleTextures::FreeTextures()
