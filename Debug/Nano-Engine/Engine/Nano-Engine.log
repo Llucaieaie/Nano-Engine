@@ -1,5 +1,6 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(498,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-  ModuleTextures.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\corecrt_math_defines.h(28,1): warning C4005: 'M_PI': macro redefinition
-C:\Users\llucea\Documents\GitHub\Nano-Engine\Nano-Engine\Externals\SDL\include\SDL_stdinc.h(619): message : see previous definition of 'M_PI'
-  Nano-Engine.vcxproj -> C:\Users\llucea\Documents\GitHub\Nano-Engine\Debug\Nano Engine.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(498,5): warning MSB8004: El directorio Intermediate no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Intermediate.
+  ModuleCamera3D.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_math_defines.h(28,1): warning C4005: 'M_PI': redefinición de macro
+C:\Users\Lluc Estruch\OneDrive\Documentos\GitHub\Nano-Engine\Nano-Engine\Externals\SDL\include\SDL_stdinc.h(619): message : vea la definición anterior de 'M_PI'
+C:\Users\Lluc Estruch\OneDrive\Documentos\GitHub\Nano-Engine\Nano-Engine\Sources\Modules\ModuleCamera3D.cpp(53,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Nano-Engine.vcxproj -> C:\Users\Lluc Estruch\OneDrive\Documentos\GitHub\Nano-Engine\Debug\Nano Engine.exe
