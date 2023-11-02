@@ -26,6 +26,8 @@ bool ModuleHierarchy::Start()
 	root = new GameObject();
 	root->objectName = "Scene";
 
+	objectSelected = nullptr;
+
 	return ret;
 }
 
