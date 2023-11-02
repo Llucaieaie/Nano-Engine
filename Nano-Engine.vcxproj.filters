@@ -483,6 +483,9 @@
     <ClInclude Include="Nano-Engine\Externals\MathGeoLib\include\MathGeoLibFwd.h">
       <Filter>Externals\MathGeoLib</Filter>
     </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\Modules\ModuleScene.h">
+      <Filter>Sources\Modules</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Nano-Engine\Sources\Core\Application.cpp">
@@ -655,6 +658,9 @@
     </ClCompile>
     <ClCompile Include="Nano-Engine\Externals\MathGeoLib\include\Time\Clock.cpp">
       <Filter>Externals\MathGeoLib\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\Modules\ModuleScene.cpp">
+      <Filter>Sources\Modules</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

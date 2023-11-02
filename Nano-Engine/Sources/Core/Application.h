@@ -11,6 +11,7 @@
 #include "ModuleGeometry.h"
 #include "ModuleTextures.h"
 #include "ModuleFileSystem.h"
+#include "ModuleScene.h"
 
 #include<vector>
 
@@ -25,6 +26,7 @@ public:
 	ModuleGeometry* geometry;
 	ModuleTextures* textures;
 	ModuleFileSystem* fileSystem;
+	ModuleScene* scene;
 
 private:
 	Timer	ms_timer;

@@ -10,6 +10,7 @@ Application::Application()
 	geometry = new ModuleGeometry(this);
 	textures = new ModuleTextures(this);
 	fileSystem = new ModuleFileSystem(this);
+	scene = new ModuleScene(this);
 
 	// The order of calls is very important!
 	// Modules will Init() Start() and Update in this order
@@ -23,6 +24,7 @@ Application::Application()
 	AddModule(geometry);
 	AddModule(textures);
 	AddModule(fileSystem);
+	AddModule(scene);
 
 	AddModule(renderer3D);
 	AddModule(editor);

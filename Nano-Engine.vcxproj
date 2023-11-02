@@ -215,6 +215,7 @@
     <ClInclude Include="Nano-Engine\Sources\Modules\ModuleGeometry.h" />
     <ClInclude Include="Nano-Engine\Sources\Modules\ModuleInput.h" />
     <ClInclude Include="Nano-Engine\Sources\Modules\ModuleRenderer3D.h" />
+    <ClInclude Include="Nano-Engine\Sources\Modules\ModuleScene.h" />
     <ClInclude Include="Nano-Engine\Sources\Modules\ModuleTextures.h" />
     <ClInclude Include="Nano-Engine\Sources\Modules\ModuleWindow.h" />
     <ClInclude Include="Nano-Engine\Sources\Tools\Timer.h" />
@@ -273,6 +274,7 @@
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleGeometry.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleInput.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleRenderer3D.cpp" />
+    <ClCompile Include="Nano-Engine\Sources\Modules\ModuleScene.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleTextures.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleWindow.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Tools\log.cpp" />
