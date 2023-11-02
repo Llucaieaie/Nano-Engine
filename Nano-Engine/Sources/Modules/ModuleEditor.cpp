@@ -93,17 +93,10 @@ void ModuleEditor::ShowMenuBar() {
     {
         if (ImGui::BeginMenu("File"))
         {
-            ImGui::Text("Hello world!");
-            ImGui::EndMenu();
-        }
-        if (ImGui::BeginMenu("Assets"))
-        {
-            ImGui::Text("Hello world!");
-            ImGui::EndMenu();
-        }
-        if (ImGui::BeginMenu("Objects"))
-        {
-            ImGui::Text("Hello world!");
+            if (ImGui::MenuItem("Quit")) {
+                App->input->quit = true;
+                LOG("QUIT");
+            }
             ImGui::EndMenu();
         }
         if (ImGui::BeginMenu("Help"))
