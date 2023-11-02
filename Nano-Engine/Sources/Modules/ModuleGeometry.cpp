@@ -44,9 +44,7 @@ void ModuleGeometry::LoadFile(const char* file_path)
         for (int i = 0; i < scene->mNumMeshes; i++)
         {
             ImportMesh(scene->mMeshes[i], newObject);
-
         }
-
         aiReleaseImport(scene);
     }
     else
@@ -111,9 +109,11 @@ void ModuleGeometry::ImportMesh(aiMesh* aiMesh, GameObject* object)
             object->components.push_back(component);
 
         meshVector.push_back(mesh);
+        LOG("Mesh imported.")
     }
     else
     {
+        LOG("Error importing mesh.")
         delete mesh;
     }
 }
@@ -159,6 +159,7 @@ void ModuleGeometry::BufferMesh(Mesh* mesh)
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh->EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint) * mesh->num_index, mesh->index, GL_STATIC_DRAW);
 
+    LOG("Mesh buffered.")
 }
 
 void ModuleGeometry::RenderScene()
@@ -195,6 +196,8 @@ void Mesh::ShowNormals()
     }
     glColor3f(1, 1, 1);
     glEnd();
+
+    LOG("Showing face normals");
 }
 
 float3 Mesh::GetVectorFromIndex(float* startValue)
