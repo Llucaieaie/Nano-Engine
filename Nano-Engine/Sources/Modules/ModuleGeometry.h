@@ -3,6 +3,7 @@
 
 #include "Module.h"
 #include "Globals.h"
+
 #include "Glew/include/glew.h"
 
 //#include "glmath.h"
@@ -18,6 +19,8 @@
 #include <vector>
 
 #define VERTEX_ARGUMENTS 5
+
+class GameObject;
 
 struct Mesh
 {
@@ -37,6 +40,8 @@ struct Mesh
 
 	float3 GetVectorFromIndex(float* startValue);
 
+	GameObject* owner;
+
 	void Render();
 	void ShowNormals();
 };
@@ -53,10 +58,11 @@ public:
 	bool Start() override;
 	bool CleanUp() override;
 	void LoadFile(const char* file_path);
-	void ImportMesh(aiMesh* aiMesh);
+	void ImportMesh(aiMesh* aiMesh, GameObject* object);
 	void BufferMesh(Mesh* mesh);
 	void RenderScene();
 
+	bool showNormals = true;
 private:
 
 public:

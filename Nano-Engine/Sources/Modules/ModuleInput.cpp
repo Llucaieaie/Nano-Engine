@@ -143,18 +143,18 @@ void ModuleInput::LoadDroppedFile(const char* fileName) {
 	const char* extension = strrchr(fileName, '.');
 	if (extension != nullptr) {
 		extension++;
-	}
-	if (strcmp(extension, "fbx") == 0)
-	{
-		App->geometry->LoadFile(fileName);
-	}
-	if (strcmp(extension, "png") == 0 || strcmp(extension, "dds") == 0)
-	{
-		App->textures->LoadTextures(fileName);
-	}
-	else
-	{
-		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Error loading file", filePath, App->window->window);
-		LOG("Error loading file");
+		if (strcmp(extension, "fbx") == 0 || strcmp(extension, "FBX") == 0)
+		{
+			App->geometry->LoadFile(fileName);
+		}
+		if (strcmp(extension, "png") == 0 || strcmp(extension, "dds") == 0 || strcmp(extension, "PNG") == 0 || strcmp(extension, "DDS") == 0)
+		{
+			App->textures->LoadTextures(fileName);
+		}
+		else
+		{
+			SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "Error loading file", filePath, App->window->window);
+			LOG("Error loading file");
+		}
 	}
 }

@@ -50,7 +50,7 @@
       <SDLCheck>false</SDLCheck>
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>Nano-Engine/Externals/;Nano-Engine/Externals/ImGui/;Nano-Engine/Externals/SDL/include;Nano-Engine/Sources/Modules;Nano-Engine/Sources/Tools;Nano-Engine/Sources/Containers;Nano-Engine/Sources/Helpers;Nano-Engine/Sources/Core</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Nano-Engine/Externals/;Nano-Engine/Externals/ImGui/;Nano-Engine/Externals/SDL/include;Nano-Engine/Sources/Modules;Nano-Engine/Sources/Tools;Nano-Engine/Sources/Containers;Nano-Engine/Sources/Helpers;Nano-Engine/Sources/Core;Nano-Engine/Sources/GameObject</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -206,6 +206,10 @@
     <ClInclude Include="Nano-Engine\Sources\Containers\Color.h" />
     <ClInclude Include="Nano-Engine\Sources\Core\Application.h" />
     <ClInclude Include="Nano-Engine\Sources\Core\Globals.h" />
+    <ClInclude Include="Nano-Engine\Sources\GameObject\Component.h" />
+    <ClInclude Include="Nano-Engine\Sources\GameObject\GameObject.h" />
+    <ClInclude Include="Nano-Engine\Sources\GameObject\Mesh.h" />
+    <ClInclude Include="Nano-Engine\Sources\GameObject\Transform.h" />
     <ClInclude Include="Nano-Engine\Sources\Helpers\Light.h" />
     <ClInclude Include="Nano-Engine\Sources\Helpers\Primitive.h" />
     <ClInclude Include="Nano-Engine\Sources\Modules\Module.h" />
@@ -213,6 +217,7 @@
     <ClInclude Include="Nano-Engine\Sources\Modules\ModuleEditor.h" />
     <ClInclude Include="Nano-Engine\Sources\Modules\ModuleFileSystem.h" />
     <ClInclude Include="Nano-Engine\Sources\Modules\ModuleGeometry.h" />
+    <ClInclude Include="Nano-Engine\Sources\Modules\ModuleHierarchy.h" />
     <ClInclude Include="Nano-Engine\Sources\Modules\ModuleInput.h" />
     <ClInclude Include="Nano-Engine\Sources\Modules\ModuleRenderer3D.h" />
     <ClInclude Include="Nano-Engine\Sources\Modules\ModuleScene.h" />
@@ -266,12 +271,17 @@
     <ClCompile Include="Nano-Engine\Sources\Containers\Color.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Core\Application.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Core\Main.cpp" />
+    <ClCompile Include="Nano-Engine\Sources\GameObject\Component.cpp" />
+    <ClCompile Include="Nano-Engine\Sources\GameObject\GameObject.cpp" />
+    <ClCompile Include="Nano-Engine\Sources\GameObject\Mesh.cpp" />
+    <ClCompile Include="Nano-Engine\Sources\GameObject\Transform.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Helpers\Light.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Helpers\Primitive.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleCamera3D.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleEditor.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleFileSystem.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleGeometry.cpp" />
+    <ClCompile Include="Nano-Engine\Sources\Modules\ModuleHierarchy.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleInput.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleRenderer3D.cpp" />
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleScene.cpp" />

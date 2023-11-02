@@ -12,6 +12,7 @@
 #include "ModuleTextures.h"
 #include "ModuleFileSystem.h"
 #include "ModuleScene.h"
+#include "ModuleHierarchy.h"
 
 #include<vector>
 
@@ -27,6 +28,7 @@ public:
 	ModuleTextures* textures;
 	ModuleFileSystem* fileSystem;
 	ModuleScene* scene;
+	ModuleHierarchy* hierarchy;
 
 private:
 	Timer	ms_timer;
@@ -36,6 +38,8 @@ private:
 public:
 	Application();
 	~Application();
+
+	static Application* GetApp();
 
 	bool Init();
 	update_status Update();

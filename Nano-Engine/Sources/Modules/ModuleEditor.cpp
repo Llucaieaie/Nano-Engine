@@ -4,6 +4,9 @@
 #include "ModuleWindow.h"
 #include "ModuleRenderer3D.h"
 #include "ModuleInput.h"
+#include "ModuleHierarchy.h"
+#include "GameObject.h"
+
 #include "ImGui/imgui.h"
 #include "ImGui/backends/imgui_impl_opengl3.h"
 #include "ImGui/backends/imgui_impl_sdl2.h"
@@ -23,6 +26,7 @@ bool ModuleEditor::Init()
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
+    io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
@@ -35,9 +39,9 @@ bool ModuleEditor::Init()
 
     mFPSLog.reserve(30);
 
-    isFileExplorer = true;
+    isFileExplorer = false;
     isInputWindow = false;
-    isConsoleWindow = false;
+    isConsoleWindow = true;
     
     return true;
 }
@@ -59,7 +63,9 @@ void ModuleEditor::DrawEditor()
         ShowInputInfo();
     if (isConsoleWindow)
         ShowConsole();
+    ShowHierarchy();
 
+        
     //if (ImGui::Begin("Configuration"))
     //{
     //    ImGui::PlotHistogram("FPS", mFPSLog.data(), mFPSLog.size());
@@ -128,6 +134,19 @@ void ModuleEditor::ShowFileExplorer() {
     ImGui::Separator();
     ImGui::Text("BakerHouse.fbx");
     ImGui::End();
+}
+
+void ModuleEditor::ShowHierarchy()
+{
+    menuBarMargin = ImGui::GetTextLineHeightWithSpacing();
+    ImGui::SetNextWindowPos(ImVec2(0, menuBarMargin), ImGuiCond_Appearing);
+    ImGui::SetNextWindowSize(ImVec2(250, SCREEN_HEIGHT - menuBarMargin), ImGuiCond_Appearing);
+    App->hierarchy->DrawHierarchy();
+
+    if (App->hierarchy->objectSelected != nullptr)
+        App->hierarchy->objectSelected->InspectorWindow();
+    else
+        ImGui::End();
 }
 
 void ModuleEditor::AddFPS(const float aFPS)
@@ -236,7 +255,10 @@ void ModuleEditor::pushText(const char* text) {
 
 void ModuleEditor::ShowConsole() {
 
-    if(!ImGui::Begin("Console", &isConsoleWindow, ImGuiWindowFlags_NoCollapse)) {
+    ImGui::SetNextWindowPos(ImVec2(250, SCREEN_HEIGHT-200), ImGuiCond_Appearing);
+    ImGui::SetNextWindowSize(ImVec2(SCREEN_WIDTH-250, 200), ImGuiCond_Appearing);
+
+    if(!ImGui::Begin("Console", &isConsoleWindow, ImGuiWindowFlags_AlwaysVerticalScrollbar)) {
         ImGui::End();
     }
     

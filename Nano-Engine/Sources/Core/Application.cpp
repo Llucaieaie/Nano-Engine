@@ -11,6 +11,7 @@ Application::Application()
 	textures = new ModuleTextures(this);
 	fileSystem = new ModuleFileSystem(this);
 	scene = new ModuleScene(this);
+	hierarchy = new ModuleHierarchy(this);
 
 	// The order of calls is very important!
 	// Modules will Init() Start() and Update in this order
@@ -24,11 +25,21 @@ Application::Application()
 	AddModule(geometry);
 	AddModule(textures);
 	AddModule(fileSystem);
+	AddModule(hierarchy);
 	AddModule(scene);
 
 	AddModule(renderer3D);
 	AddModule(editor);
+
 }
+	Application* Application::GetApp()
+	{
+		if (App == nullptr)
+		{
+			App = new Application();
+		}
+		return App;
+	}
 
 Application::~Application()
 {

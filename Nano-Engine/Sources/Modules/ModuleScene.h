@@ -6,7 +6,9 @@
 #include "GLMath/glmath.h"
 #include "ModuleRenderer3D.h"
 
-using namespace std;
+//using namespace std;
+
+class GameObject;
 
 class ModuleScene : public Module
 {
@@ -19,9 +21,9 @@ public:
 	update_status Update(float dt);
 	update_status PostUpdate(float dt);
 	bool CleanUp();
-private:
 
-
+	GameObject* createObj(GameObject* parent);
+	GameObject* objdebug;
 };
 
 #endif

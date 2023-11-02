@@ -4,6 +4,11 @@
 #include "ModuleTextures.h"
 #include "ModuleWindow.h"
 #include "ModuleRenderer3D.h"
+#include "ModuleHierarchy.h"
+#include "GameObject.h"
+#include "Component.h"
+#include "Mesh.h"
+
 #include "Glew/include/glew.h"
 
 ModuleGeometry::ModuleGeometry(Application* app, bool start_enabled) : Module(app, start_enabled)
@@ -34,9 +39,12 @@ void ModuleGeometry::LoadFile(const char* file_path)
 
     if (scene != nullptr && scene->HasMeshes())
     {
+        GameObject* newObject = new GameObject(App->hierarchy->root);
+
         for (int i = 0; i < scene->mNumMeshes; i++)
         {
-            ImportMesh(scene->mMeshes[i]);
+            ImportMesh(scene->mMeshes[i], newObject);
+
         }
 
         aiReleaseImport(scene);
@@ -47,7 +55,7 @@ void ModuleGeometry::LoadFile(const char* file_path)
     }
 }
 
-void ModuleGeometry::ImportMesh(aiMesh* aiMesh)
+void ModuleGeometry::ImportMesh(aiMesh* aiMesh, GameObject* object)
 {
     Mesh* mesh = new Mesh();
     mesh->num_vertex = aiMesh->mNumVertices;
@@ -96,6 +104,12 @@ void ModuleGeometry::ImportMesh(aiMesh* aiMesh)
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh->id_index);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint) * mesh->num_index, mesh->index, GL_STATIC_DRAW);
 
+        ComponentMesh* component = new ComponentMesh(object);
+        mesh->owner = object;
+        component->mesh = mesh;
+        if (object->components.size() == 1)
+            object->components.push_back(component);
+
         meshVector.push_back(mesh);
     }
     else
@@ -116,7 +130,15 @@ void Mesh::Render()
     glBindTexture(GL_TEXTURE_2D, VAO);
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, id_index);
+    glPushMatrix();
+
+    if (owner != nullptr) {
+       glMultMatrixf(&owner->objectTransform->lTransform);
+    }
+
     glDrawElements(GL_TRIANGLES, num_index, GL_UNSIGNED_INT, NULL);
+
+    glPopMatrix();
 
     glBindTexture(GL_TEXTURE_2D, 0);
     glDisableClientState(GL_VERTEX_ARRAY);
@@ -141,7 +163,6 @@ void ModuleGeometry::BufferMesh(Mesh* mesh)
 
 void ModuleGeometry::RenderScene()
 {
-    bool showNormals = true;
     for (size_t i = 0; i < meshVector.size(); i++) {
         meshVector[i]->Render();
         if(showNormals)
@@ -168,7 +189,6 @@ void Mesh::ShowNormals()
         float normalLenght = crossVec.Length()/100;
         if (normalLenght < 0.2f) { normalLenght = 0.2f; }
         float3 normalDirection = crossVec.Normalized();
-        
         
         glVertex3f(center.x, center.y, center.z);
         glVertex3f(center.x + normalDirection.x * normalLenght, center.y + normalDirection.y * normalLenght, center.z + normalDirection.z * normalLenght);

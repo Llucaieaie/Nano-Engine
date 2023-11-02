@@ -17,6 +17,7 @@ public:
 
 	void ShowMenuBar();
 	void ShowFileExplorer();
+	void ShowHierarchy();
 
 	void AddFPS(const float aFPS);
 

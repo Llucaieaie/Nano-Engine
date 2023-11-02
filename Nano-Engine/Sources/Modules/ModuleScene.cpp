@@ -3,6 +3,7 @@
 #include "ModuleScene.h"
 #include "ModuleEditor.h"
 #include "ModuleWindow.h"
+#include "GameObject.h"
 
 #include "ModuleRenderer3D.h"
 #include "Glew/include/glew.h"
@@ -22,6 +23,8 @@ bool ModuleScene::Start()
 {
 	LOG("Setting up the Scene");
 	bool ret = true;
+
+	//objdebug = new GameObject(App->hierarchy->roots);
 
 	return ret;
 }
@@ -54,6 +57,15 @@ update_status ModuleScene::PostUpdate(float dt)
 bool ModuleScene::CleanUp()
 {
 	LOG("Cleaning Scene");
+	
+	//delete objdebug;
 
 	return true;
+}
+
+GameObject* ModuleScene::createObj(GameObject* parent)
+{
+	GameObject* object = new GameObject(parent);
+
+	return object;
 }

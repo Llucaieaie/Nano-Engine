@@ -70,6 +70,9 @@
     <Filter Include="Externals\Glew">
       <UniqueIdentifier>{6d2750b7-da72-4154-95be-fbfc0bc41cb6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\GameObject">
+      <UniqueIdentifier>{493e7100-7601-4b33-b47f-753b0bdaf9d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Nano-Engine\Sources\Core\Application.h">
@@ -486,6 +489,21 @@
     <ClInclude Include="Nano-Engine\Sources\Modules\ModuleScene.h">
       <Filter>Sources\Modules</Filter>
     </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\GameObject\GameObject.h">
+      <Filter>Sources\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\GameObject\Component.h">
+      <Filter>Sources\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\GameObject\Transform.h">
+      <Filter>Sources\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\Modules\ModuleHierarchy.h">
+      <Filter>Sources\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Nano-Engine\Sources\GameObject\Mesh.h">
+      <Filter>Sources\GameObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Nano-Engine\Sources\Core\Application.cpp">
@@ -661,6 +679,21 @@
     </ClCompile>
     <ClCompile Include="Nano-Engine\Sources\Modules\ModuleScene.cpp">
       <Filter>Sources\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\GameObject\GameObject.cpp">
+      <Filter>Sources\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\GameObject\Component.cpp">
+      <Filter>Sources\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\GameObject\Transform.cpp">
+      <Filter>Sources\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\Modules\ModuleHierarchy.cpp">
+      <Filter>Sources\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Nano-Engine\Sources\GameObject\Mesh.cpp">
+      <Filter>Sources\GameObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
